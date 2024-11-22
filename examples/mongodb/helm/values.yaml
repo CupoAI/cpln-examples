@@ -3,13 +3,14 @@
 # Declare variables to be passed into your templates.
 
 mongodb:
-  name: mongodb4-new
-  image: mongo:4.4.29 # Choose an image of a supported version https://hub.docker.com/_/mongo/tags
+  name: mongodb
+  gvc: development
+  image: mongo:8.0.3-noble # Choose an image of a supported version https://hub.docker.com/_/mongo/tags
   replicas: 3
   port: 27017
   memory: 500Mi # EX. 3000Mi = 3Gi
   cpu: 1000m # vCPU or milicores with; EX. 1.5 = 1500m
-  replSetName: myReplicaSet
+  replSetName: mongodb
   volume:
     initialCapacity: 25 # In Gigabytes. For high-throughput-ssd minimum is '1000'
     fileSystemType: xfs # ext4 / xfs
